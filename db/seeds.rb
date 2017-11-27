@@ -1,6 +1,8 @@
+require('pry-byebug')
 require_relative('../models/burger.rb')
 require_relative('../models/deal.rb')
 require_relative('../models/eatery.rb')
+
 
 Deal.delete_all
 Burger.delete_all
@@ -33,3 +35,6 @@ deal1 = Deal.new( {
   'burger_id' =>burger1.id
   } )
 deal1.save
+
+binding.pry
+nil

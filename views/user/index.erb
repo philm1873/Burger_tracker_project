@@ -31,9 +31,16 @@
 <section>
   <h2><%= "#{@title}" %></h2>
 
-  <%= @days_deals.each do |deal| %>
+  <% @days_deals.each do |deal| %>
 
   <div>
-    <img src="<%= deal.eatery.logo %>">
+    <img src="../../public/images/<%= deal.eatery.logo %>">
+    <p><%= "#{deal.eatery.name}" %></p>
+  </div>
+  <div>
+    <p><%= "#{deal.name}" %></p>
+    <p><%= "Saving: #{deal.discount * deal.burger.price}" %></p>
+  </div>
 
+  <% end %>
 </section>

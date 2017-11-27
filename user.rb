@@ -14,8 +14,8 @@ get '/dealz' do
 end
 
 get '/dealz/:day' do
-  day = params['day']
-  @days_deals = Deal.find_day_deals(day)
-  @title= "#{day.capitalize!}'s Deals"
+  day = params['day'].capitalize!
+  @days_deals = Deal.find_day_deals(day.to_sym)
+  @title= "#{day}'s Deals"
   erb( :"user/index" )
 end

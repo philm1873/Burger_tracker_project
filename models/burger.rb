@@ -5,7 +5,7 @@ require_relative('../db/sql_runner.rb')
 
 class Burger
 
-  attr_reader :id
+  attr_reader :id, :price
 
   def initialize(input)
     @id = input['id'].to_i if input['id']

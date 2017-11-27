@@ -4,7 +4,7 @@ require_relative('../db/sql_runner.rb')
 
 class Eatery
 
-  attr_reader :id, :logo
+  attr_reader :id, :logo, :name
 
   def initialize(input)
     @id = input['id'].to_i if input['id']

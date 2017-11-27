@@ -4,6 +4,8 @@ require_relative('./eatery.rb')
 
 class Deal
 
+  attr_reader :name, :discount
+
   def initialize(input)
     @id = input['id'].to_i if input['id']
     @name = input['name']
@@ -43,6 +45,14 @@ class Deal
     values = [@eatery_id]
     result = SqlRunner.run(sql, values)
     return Eatery.new(result[0])
+  end
+
+  def burger
+    sql = "SELECT * FROM burgers
+    WHERE id = $1"
+    values = [@burger_id]
+    result = SqlRunner.run(sql, values)
+    return Burger.new(result[0])
   end
 
   def find_deal

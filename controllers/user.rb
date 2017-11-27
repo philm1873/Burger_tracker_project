@@ -14,6 +14,6 @@ end
 
 get '/dealz/:day' do
   @today = Date.today.strftime("%A")
-  @days_deals = Deal.find_day_deals(params['day'])
+  @days_deals = Deal.find_day_deals(params['day'].to_sym)
   erb( :"user/index" )
 end
