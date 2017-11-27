@@ -36,6 +36,22 @@ class Deal
     SqlRunner.run(sql, values)
   end
 
+  def find_day_deals(day)
+    sql = "SELECT * FROM deals
+    WHERE day = $1"
+    values = [day]
+    result = SqlRunner.run(sql, values)
+    return result.map { |deal| Deal.new(deal) }
+  end
+
+  def find_deal
+    sql = "SELECT * FROM deals
+    WHERE id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return Deal.new(result[0])
+  end
+
   def self.delete_all
     sql = "DELETE FROM deals"
     SqlRunner.run(sql)
