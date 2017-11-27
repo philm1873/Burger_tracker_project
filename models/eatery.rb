@@ -4,10 +4,12 @@ require_relative('../db/sql_runner.rb')
 
 class Eatery
 
+  attr_reader :id
+
   def initialize(input)
     @id = input['id'].to_i if input['id']
     @name = input['name']
-    @address = input['input']
+    @address = input['address']
     @tel_no = input['tel_no']
     @motto = input['motto']
     @logo = input['logo']
