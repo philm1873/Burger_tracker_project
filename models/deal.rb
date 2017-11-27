@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./eatery.rb')
 
 
 class Deal
@@ -36,12 +37,12 @@ class Deal
     SqlRunner.run(sql, values)
   end
 
-  def find_day_deals(day)
-    sql = "SELECT * FROM deals
-    WHERE day = $1"
-    values = [day]
+  def eatery
+    sql = "SELECT * FROM eateries
+    WHERE id = $1"
+    values = [@eatery_id]
     result = SqlRunner.run(sql, values)
-    return result.map { |deal| Deal.new(deal) }
+    return Eatery.new(result[0])
   end
 
   def find_deal
@@ -60,6 +61,14 @@ class Deal
   def self.find_all
     sql = "SELECT * FORM deals"
     result = SqlRunner.run(sql)
+    return result.map { |deal| Deal.new(deal) }
+  end
+
+  def self.find_day_deals(day)
+    sql = "SELECT * FROM deals
+    WHERE day = $1"
+    values = [day]
+    result = SqlRunner.run(sql, values)
     return result.map { |deal| Deal.new(deal) }
   end
 

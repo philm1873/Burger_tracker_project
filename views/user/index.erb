@@ -1,0 +1,39 @@
+
+<a href="/dealz/eateries">Eateries</a>
+<a href="/dealz/deals">Deals</a>
+
+<nav>
+  <ul>
+    <li>
+      <a href="/dealz/monday">Monday</a>
+    </li>
+    <li>
+      <a href="/dealz/tuesday">Tuesday</a>
+    </li>
+    <li>
+      <a href="/dealz/wednesday">Wednesday</a>
+    </li>
+    <li>
+      <a href="/dealz/thursday">Thursday</a>
+    </li>
+    <li>
+      <a href="/dealz/friday">Friday</a>
+    </li>
+    <li>
+      <a href="/dealz/saturday">Saturday</a>
+    </li>
+    <li>
+      <a href="/dealz/sunday">Sunday</a>
+    </li>
+  </ul>
+</nav>
+
+<section>
+  <h2><%= "#{@title}" %></h2>
+
+  <%= @days_deals.each do |deal| %>
+
+  <div>
+    <img src="<%= deal.eatery.logo %>">
+
+</section>
