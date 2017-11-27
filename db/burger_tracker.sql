@@ -7,7 +7,6 @@ CREATE TABLE eateries(
   name VARCHAR(255),
   address VARCHAR(255),
   tel_no VARCHAR(255),
-  motto VARCHAR(255),
   logo VARCHAR(255)
 );
 

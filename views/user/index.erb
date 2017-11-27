@@ -34,12 +34,16 @@
   <% @days_deals.each do |deal| %>
 
   <div>
-    <img src="../../public/images/<%= deal.eatery.logo %>">
-    <p><%= "#{deal.eatery.name}" %></p>
+    <a href="/dealz/eateries/<%= deal.eatery.id %>">
+      <img src="./images/<%= deal.eatery.logo %>">
+      <p><%= "#{deal.eatery.name}" %></p>
+    </a>
   </div>
   <div>
-    <p><%= "#{deal.name}" %></p>
-    <p><%= "Saving: #{deal.discount * deal.burger.price}" %></p>
+    <a href="/dealz/deals/<%= deal.id %>">
+      <p><%= "#{deal.name}" %></p>
+      <p><%= "Saving: #{deal.discount * deal.burger.price}" %></p>
+    </a>
   </div>
 
   <% end %>

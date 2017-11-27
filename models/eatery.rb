@@ -11,24 +11,23 @@ class Eatery
     @name = input['name']
     @address = input['address']
     @tel_no = input['tel_no']
-    @motto = input['motto']
     @logo = input['logo']
   end
 
   def save
-    sql = "INSERT INTO eateries(name, address, tel_no, motto, logo)
-    VALUES($1, $2, $3, $4, $5)
+    sql = "INSERT INTO eateries(name, address, tel_no, logo)
+    VALUES($1, $2, $3, $4)
     RETURNING id"
-    values = [@name, @address, @tel_no, @motto, @logo]
+    values = [@name, @address, @tel_no, @logo]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id']
   end
 
   def update
     sql = "UPDATE eateries
-    SET (name, address, tel_no, motto, logo) = ($1, $2, $3, $4, $5)
+    SET (name, address, tel_no, motto, logo) = ($1, $2, $3, $4)
     WHERE id = $6"
-    values = [@name, @address, @tel_no, @motto, @logo, @id]
+    values = [@name, @address, @tel_no, @logo, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -55,6 +54,14 @@ class Eatery
     values = [@id]
     result = SqlRunner.run(sql, values)
     return result.map { |deal| Deal.new(deal) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM eateries
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Eatery.new(result[0])
   end
 
   def self.find_all

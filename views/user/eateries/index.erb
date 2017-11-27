@@ -1,0 +1,6 @@
+<% @eateries.each do |eatery| %>
+<a href="/dealz/eateries/<%= eatery.id %>">
+  <img src="./images/<%= eatery.logo %>">
+  <h2><%= "#{eatery.name}" %></h2>
+</a>
+<% end %>

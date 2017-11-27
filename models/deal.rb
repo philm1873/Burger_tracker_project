@@ -4,7 +4,7 @@ require_relative('./eatery.rb')
 
 class Deal
 
-  attr_reader :name, :discount
+  attr_reader :id, :name, :discount
 
   def initialize(input)
     @id = input['id'].to_i if input['id']
@@ -69,9 +69,17 @@ class Deal
   end
 
   def self.find_all
-    sql = "SELECT * FORM deals"
+    sql = "SELECT * FROM deals"
     result = SqlRunner.run(sql)
     return result.map { |deal| Deal.new(deal) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM deals
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Deal.new(result[0])
   end
 
   def self.find_day_deals(day)
