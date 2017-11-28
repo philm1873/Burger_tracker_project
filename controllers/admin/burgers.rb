@@ -1,7 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('../models/burger.rb')
-require_relative('../models/eatery.rb')
+require_relative('../../models/burger.rb')
+require_relative('../../models/eatery.rb')
 
 get '/admin' do
   erb(:"admin/index")
@@ -29,7 +29,7 @@ put '/admin/burgers/:id' do
 end
 
 delete '/admin/burgers/:id' do
-  Burger.new(params).delete
+  Burger.find(params['id']).delete
   redirect '/admin/burgers'
 end
 
