@@ -18,3 +18,8 @@ get '/admin/burgers/:id/edit' do
   @burger = Burger.find(params['id'])
   erb(:"admin/burgers/edit")
 end
+
+put '/admin/burgers/:id' do
+  Burger.new(params).update
+  redirect '/admin/burgers'
+end

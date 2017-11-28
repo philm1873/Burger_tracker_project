@@ -68,7 +68,7 @@ class Deal
     if @discount < 1
       saving = price - @discount * price
     else
-      saving = @discount * price
+      saving = price
     end
     return sprintf('%.2f', saving/100)
   end

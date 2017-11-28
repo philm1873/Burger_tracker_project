@@ -40,12 +40,12 @@ get '/dealz/:day' do
   erb( :"user/index" )
 end
 
-get '/dealz/burgers/:id' do
+get '/dealz/burgers/eatery/:id' do
   @burgers = Eatery.find_burgers(params['id'])
   erb( :"user/burgers/index" )
 end
 
-get '/dealz/burger/:id' do
+get '/dealz/burgers/:id' do
   @burger = Burger.find(params['id'])
   erb( :"user/burgers/show" )
 end
