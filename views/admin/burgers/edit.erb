@@ -38,6 +38,15 @@
       value="<%= @burger.image %>"
       />
     </div>
+    <div>
+      <select name="eatery_id">
+        <% @eateries.each do |eatery| %>
+          <option value="<%= eatery.id %>" <%= "selected" if eatery.id == @burger.eatery_id %>>
+          <%= "#{eatery.name}" %>
+          </option>
+        <% end %>
+      </select>
+    </div>
   </div>
 
   <button>Update Burger</button>

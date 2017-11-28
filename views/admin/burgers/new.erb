@@ -41,6 +41,14 @@
       required
       />
     </div>
+    <label for="eatery-field">Eatery:</label>
+    <div>
+      <select name="eatery_id">
+        <% @eateries.each do |eatery| %>
+          <option value="<%= eatery.id %>"><%= "#{eatery.name}" %></option>
+        <% end %>
+      </select>
+    </div>
   </div>
 
   <button>Create Burger</button>

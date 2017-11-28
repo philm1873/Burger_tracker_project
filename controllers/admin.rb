@@ -15,11 +15,13 @@ get '/admin/burgers' do
 end
 
 get '/admin/burgers/:id/edit' do
+  @eateries = Eatery.find_all
   @burger = Burger.find(params['id'])
   erb(:"admin/burgers/edit")
 end
 
 get '/admin/burgers/new' do
+  @eateries = Eatery.find_all
   erb(:"admin/burgers/new")
 end
 
