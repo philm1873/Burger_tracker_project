@@ -21,7 +21,8 @@ burger1 = Burger.new ( {
   'name' => 'Double Cheese',
   'type' => 'Cheeseburger',
   'price' => '250',
-  'image' => 'image.jpg'
+  'image' => 'image.jpg',
+  'eatery_id' => eatery1.id
   } )
 burger1.save
 
@@ -47,7 +48,8 @@ burger2 = Burger.new ( {
   'name' => 'Quarter Pounder',
   'type' => 'Hamburger',
   'price' => '175',
-  'image' => 'image2.jpg'
+  'image' => 'image2.jpg',
+  'eatery_id' => eatery2.id
   } )
 burger2.save
 

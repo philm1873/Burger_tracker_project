@@ -15,6 +15,7 @@ CREATE TABLE burgers(
   name VARCHAR(255),
   type VARCHAR(255),
   price INT4,
+  eatery_id INT4 REFERENCES eateries(id) ON DELETE CASCADE,
   image VARCHAR(255)
 );
 

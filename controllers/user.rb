@@ -41,7 +41,7 @@ get '/dealz/:day' do
 end
 
 get '/dealz/burgers/eatery/:id' do
-  @burgers = Eatery.find_burgers(params['id'])
+  @burgers = Burger.find_burgers(params['id'])
   erb( :"user/burgers/index" )
 end
 

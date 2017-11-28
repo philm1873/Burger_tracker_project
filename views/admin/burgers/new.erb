@@ -1,0 +1,47 @@
+<nav>
+  <a href="/admin">Admin Home</a>
+</nav>
+
+<form method="post" action="/admin/burgers">
+
+  <div>
+    <label for="name-field">Burger Name:</label>
+    <div>
+      <input
+      type="text"
+      name="name"
+      placeholder="Burger Name"
+      required
+      />
+    </div>
+    <label for="type-field">Burger Type:</label>
+    <div>
+      <input
+      type="text"
+      name="type"
+      placeholder="Burger Type"
+      required
+      />
+    </div>
+    <label for="price-field">Burger Price:</label>
+    <div>
+      <input
+      type="text"
+      name="price"
+      placeholder="Price in Pence"
+      required
+      />
+    </div>
+    <label for="image-field">Burger Image:</label>
+    <div>
+      <input
+      type="text"
+      name="image"
+      placeholder="Image Filename"
+      required
+      />
+    </div>
+  </div>
+
+  <button>Create Burger</button>
+</form>

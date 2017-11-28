@@ -5,21 +5,22 @@ require_relative('../db/sql_runner.rb')
 
 class Burger
 
-  attr_reader :id, :name, :price, :type, :image
+  attr_reader :id, :name, :price, :type, :image, :eatery_id
 
   def initialize(input)
     @id = input['id'].to_i if input['id']
     @name = input['name']
     @type = input['type'].to_sym
     @price = input['price'].to_i
+    @eatery_id = input['eatery_id'].to_i
     @image = input['image']
   end
 
   def save
-    sql = "INSERT INTO burgers(name, type, price, image)
-    VALUES($1, $2, $3, $4)
+    sql = "INSERT INTO burgers(name, type, price, eatery_id, image)
+    VALUES($1, $2, $3, $4, $5)
     RETURNING id"
-    values = [@name, @type, @price, @image]
+    values = [@name, @type, @price, @eatery_id, @image]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id']
   end
@@ -27,7 +28,7 @@ class Burger
   def update
     sql = "UPDATE burgers
     SET (name, type, price, image) = ($1, $2, $3, $4)
-    WHERE id = $5"
+    WHERE id = $6"
     values = [@name, @type, @price, @image, @id]
     SqlRunner.run(sql, values)
   end
@@ -48,13 +49,9 @@ class Burger
   end
 
   def find_eatery
-    sql = "SELECT e.* FROM burgers b
-    INNER JOIN deals d
-    ON b.id = d.burger_id
-    INNER JOIN eateries e
-    ON d.burger_id = e.id
-    WHERE b.id = $1"
-    values = [@id]
+    sql = "SELECT * FROM eateries
+    WHERE id = $1"
+    values = [@eatery_id]
     result = SqlRunner.run(sql, values)
     return Eatery.new(result[0])
   end
@@ -77,6 +74,14 @@ class Burger
     values = [id]
     result = SqlRunner.run(sql, values)
     return Burger.new(result[0])
+  end
+
+  def self.find_burgers(eatery_id)
+    sql = "SELECT * FROM burgers
+    WHERE eatery_id = $1"
+    values = [eatery_id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |burger| Burger.new(burger) }
   end
 
   def self.delete_all

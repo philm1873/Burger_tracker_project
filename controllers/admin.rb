@@ -19,7 +19,21 @@ get '/admin/burgers/:id/edit' do
   erb(:"admin/burgers/edit")
 end
 
+get '/admin/burgers/new' do
+  erb(:"admin/burgers/new")
+end
+
 put '/admin/burgers/:id' do
   Burger.new(params).update
   redirect '/admin/burgers'
+end
+
+delete '/admin/burgers/:id' do
+  Burger.new(params).delete
+  redirect '/admin/burgers'
+end
+
+post '/admin/burgers' do
+   Burger.new(params).save
+   redirect '/admin/burgers'
 end
