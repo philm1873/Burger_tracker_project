@@ -4,7 +4,7 @@ require_relative('./eatery.rb')
 
 class Deal
 
-  attr_reader :id, :name, :discount, :day
+  attr_reader :id, :name, :discount, :day, :burger_id, :eatery_id
 
   def initialize(input)
     @id = input['id'].to_i if input['id']

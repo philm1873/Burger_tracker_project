@@ -4,7 +4,7 @@ require_relative('../db/sql_runner.rb')
 
 class Eatery
 
-  attr_reader :id, :logo, :name
+  attr_reader :id, :logo, :name, :address, :tel_no
 
   def initialize(input)
     @id = input['id'].to_i if input['id']
@@ -38,12 +38,12 @@ class Eatery
     SqlRunner.run(sql, values)
   end
 
-  def find_burgers
-    sql = "SELECT *.b FROM deals d
+  def self.find_burgers(id)
+    sql = "SELECT b.* FROM deals d
     INNER JOIN burgers b
     ON d.burger_id = b.id
     WHERE d.eatery_id = $1"
-    values = [@id]
+    values = [id]
     result = SqlRunner.run(sql, values)
     return result.map { |burger| Burger.new(burger) }
   end

@@ -5,7 +5,7 @@ require_relative('../db/sql_runner.rb')
 
 class Burger
 
-  attr_reader :id, :name, :price, :type
+  attr_reader :id, :name, :price, :type, :image
 
   def initialize(input)
     @id = input['id'].to_i if input['id']
@@ -69,6 +69,14 @@ class Burger
     sql = "SELECT * FROM burgers"
     result = SqlRunner.run(sql)
     return result.map { |burger| Burger.new(burger) }
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM burgers
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Burger.new(result[0])
   end
 
   def self.delete_all
