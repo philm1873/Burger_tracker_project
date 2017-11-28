@@ -1,0 +1,44 @@
+<section>
+  <a href="/admin">Admin Home</a>
+</section>
+
+<form method="post" action="/admin/burgers/<%= @burger.id %>">
+  <input type="hidden" name="_method" value="put">
+
+  <div>
+    <label for="name-field">Burger Name:</label>
+    <div>
+      <input
+      type="text"
+      name="name"
+      value="<%= @burger.name %>"
+      />
+    </div>
+    <label for="type-field">Burger Type:</label>
+    <div>
+      <input
+      type="text"
+      name="type"
+      value="<%= @burger.type %>"
+      />
+    </div>
+    <label for="price-field">Burger Price(pence):</label>
+    <div>
+      <input
+      type="text"
+      name="price"
+      value="<%= @burger.price %>"
+      />
+    </div>
+    <label for="image-field">Burger Image:</label>
+    <div>
+      <input
+      type="text"
+      name="image"
+      value="<%= @burger.image %>"
+      />
+    </div>
+  </div>
+
+  <button>Update Burger</button>
+</form>
