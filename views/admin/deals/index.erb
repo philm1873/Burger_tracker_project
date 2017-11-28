@@ -1,0 +1,31 @@
+<nav>
+  <ul>
+    <li><a href="/admin">Admin Home</a></li>
+  </ul>
+</nav>
+
+<section>
+  <div>
+    <tr>
+      <th>Deal Name</th>
+      <th>Burger Name</th>
+      <th>Eatery Name</th>
+    </tr>
+    <% @deals.each do |deal| %>
+    <tr>
+      <td><%= deal.name %></td>
+      <td><%= deal.burger.name %></td>
+      <td><%= deal.eatery.name %></td>
+      <td><a href="/admin/deals/<%= deal.id %>/edit">Edit</a></td>
+      <td><form method="post" action="/admin/deals/<%= deal.id %>">
+        <input type="hidden" name="_method" value="delete">
+        <button>Delete Deal</button>
+      </form>
+      </td>
+    </tr>
+    <% end %>
+  </div>
+  <div>
+    <a href="/admin/deals/new">New Deal</a>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<nav>
+  <ul>
+    <li><a href="/admin">Admin Home</a></li>
+  </ul>
+</nav>
+
+<form method="post" action="/admin/eateries/<%= @eatery.id %>">
+  <input type="hidden" name="_method" value="put">
+
+  <div>
+    <label for="name-field">Eatery Name:</label>
+    <div>
+      <input
+      type="text"
+      name="name"
+      value="<%= @eatery.name %>"
+      />
+    </div>
+    <label for="address-field">Address:</label>
+    <div>
+      <input
+      type="text"
+      name="type"
+      value="<%= @eatery.address %>"
+      />
+    </div>
+    <label for="tel_no-field">Telephone Number:</label>
+    <div>
+      <input
+      type="text"
+      name="tel_no"
+      value="<%= @eatery.tel_no %>"
+      />
+    </div>
+    <label for="logo-field">Eatery Logo:</label>
+    <div>
+      <input
+      type="text"
+      name="logo"
+      value="<%= @eatery.logo %>"
+      />
+    </div>
+
+  <button>Update Eatery</button>
+</form>

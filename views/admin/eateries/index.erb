@@ -1,0 +1,27 @@
+<nav>
+  <ul>
+    <li><a href="/admin">Admin Home</a></li>
+  </ul>
+</nav>
+
+<section>
+  <div>
+    <tr>
+      <th>Eatery Name</th>
+    </tr>
+    <% @eateries.each do |eatery| %>
+    <tr>
+      <td><%= eatery.name %></td>
+      <td><a href="/admin/eateries/<%= eatery.id %>/edit">Edit</a></td>
+      <td><form method="post" action="/admin/eateries/<%= eatery.id %>">
+        <input type="hidden" name="_method" value="delete">
+        <button>Delete Eatery</button>
+      </form>
+      </td>
+    </tr>
+    <% end %>
+  </div>
+  <div>
+    <a href="/admin/eateries/new">New Eatery</a>
+  </div>
+</section>

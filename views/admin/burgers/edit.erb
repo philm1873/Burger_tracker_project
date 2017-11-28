@@ -1,6 +1,8 @@
-<section>
-  <a href="/admin">Admin Home</a>
-</section>
+<nav>
+  <ul>
+    <li><a href="/admin">Admin Home</a></li>
+  </ul>
+</nav>
 
 <form method="post" action="/admin/burgers/<%= @burger.id %>">
   <input type="hidden" name="_method" value="put">

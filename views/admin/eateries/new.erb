@@ -1,0 +1,49 @@
+<nav>
+  <ul>
+    <li><a href="/admin">Admin Home</a></li>
+  </ul>
+</nav>
+
+<form method="post" action="/admin/eateries">
+
+  <div>
+    <label for="name-field">eatery_id Name:</label>
+    <div>
+      <input
+      type="text"
+      name="name"
+      placeholder="Eatery Name"
+      required
+      />
+    </div>
+    <label for="address-field">Address:</label>
+    <div>
+      <input
+      type="text"
+      name="address"
+      placeholder="Eatery Address"
+      required
+      />
+    </div>
+    <label for="tel_no-field">Telephone Number:</label>
+    <div>
+      <input
+      type="text"
+      name="tel_no"
+      placeholder="Telephone Number"
+      required
+      />
+    </div>
+    <label for="logo-field">Eatery Logo:</label>
+    <div>
+      <input
+      type="text"
+      name="logo"
+      placeholder="Logo Filename"
+      required
+      />
+    </div>
+  </div>
+
+  <button>Create Eatery</button>
+</form>

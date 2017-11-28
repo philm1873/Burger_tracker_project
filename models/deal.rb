@@ -11,8 +11,8 @@ class Deal
     @name = input['name']
     @discount = input['discount'].to_f
     @day = input['day'].to_sym
-    @eatery_id = input['eatery_id']
-    @burger_id = input['burger_id']
+    @eatery_id = input['eatery_id'].to_i
+    @burger_id = input['burger_id'].to_i
   end
 
   def save
