@@ -1,6 +1,7 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('date')
+require('money')
 require_relative('../models/burger.rb')
 require_relative('../models/deal.rb')
 require_relative('../models/eatery.rb')

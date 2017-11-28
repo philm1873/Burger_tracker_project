@@ -4,7 +4,7 @@ require_relative('./eatery.rb')
 
 class Deal
 
-  attr_reader :id, :name, :discount
+  attr_reader :id, :name, :discount, :day
 
   def initialize(input)
     @id = input['id'].to_i if input['id']
@@ -62,6 +62,17 @@ class Deal
     result = SqlRunner.run(sql, values)
     return Deal.new(result[0])
   end
+
+  def money_saved
+    price = self.burger.price
+    if @discount < 1
+      saving = price - @discount * price
+    else
+      saving = @discount * price
+    end
+    return sprintf('%.2f', saving/100)
+  end
+
 
   def self.delete_all
     sql = "DELETE FROM deals"

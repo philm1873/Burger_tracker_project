@@ -5,13 +5,13 @@ require_relative('../db/sql_runner.rb')
 
 class Burger
 
-  attr_reader :id, :price
+  attr_reader :id, :name, :price, :type
 
   def initialize(input)
     @id = input['id'].to_i if input['id']
     @name = input['name']
     @type = input['type'].to_sym
-    @price = input['price'].to_f
+    @price = input['price'].to_i
     @image = input['image']
   end
 
@@ -57,6 +57,12 @@ class Burger
     values = [@id]
     result = SqlRunner.run(sql, values)
     return Eatery.new(result[0])
+  end
+
+  def display_price
+    proper_price = @price/100.0
+    display = sprintf('%.2f', proper_price)
+    return display
   end
 
   def self.find_all

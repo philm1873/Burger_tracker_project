@@ -14,7 +14,7 @@ CREATE TABLE burgers(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
   type VARCHAR(255),
-  price FLOAT(2),
+  price INT4,
   image VARCHAR(255)
 );
 
