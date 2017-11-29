@@ -1,4 +1,4 @@
-<nav>
+<nav class="nav_bar">
   <ul>
     <li><a href="/admin">Admin Home</a></li>
   </ul>
@@ -26,14 +26,11 @@
       />
     </div>
     <label for="day-field">Day:</label>
-    <div>
-      <input
-      type="text"
-      name="day"
-      placeholder="Day of Deal"
-      required
-      />
-    </div>
+    <select name="day">
+      <% @days.each do |day| %>
+        <option value="<%= day %>"><%= "#{day}" %></option>
+      <% end %>
+    </select>
     <label for="eatery-field">Eatery:</label>
     <div>
       <select name="eatery_id">

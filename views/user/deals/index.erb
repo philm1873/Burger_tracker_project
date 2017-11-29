@@ -1,5 +1,9 @@
-<a href="/dealz">Home</a>
-<a href="/dealz/eateries">Eateries</a>
+<nav class="nav_bar">
+  <ul>
+    <li><a href="/dealz">Home</a></li>
+    <li><a href="/dealz/eateries">Eateries</a></li>
+  </ul>
+</nav>
 
 <% @deals.each do |deal| %>
 <a href="/dealz/deals/<%= deal.id %>">

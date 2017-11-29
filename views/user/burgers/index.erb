@@ -1,6 +1,10 @@
-<a href="/dealz">Home</a>
-<a href="/dealz/eateries">Eateries</a>
-<a href="/dealz/deals">Deals</a>
+<nav class="nav_bar">
+  <ul>
+    <li><a href="/dealz">Home</a></li>
+    <li><a href="/dealz/eateries">Eateries</a></li>
+    <li><a href="/dealz/deals">Deals</a></li>
+  </ul>
+</nav>
 
 <% @burgers.each do |burger| %>
   <img src="/images/<%= burger.image %>">

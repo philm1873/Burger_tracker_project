@@ -1,4 +1,4 @@
-<nav>
+<nav class="nav_bar">
   <ul>
     <li><a href="/admin">Admin Home</a></li>
   </ul>
@@ -41,6 +41,7 @@
       />
     </div>
     <div>
+      <label for="eatery-field">Eatery:</label>
       <select name="eatery_id">
         <% @eateries.each do |eatery| %>
           <option value="<%= eatery.id %>" <%= "selected" if eatery.id == @burger.eatery_id %>>
