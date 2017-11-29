@@ -6,46 +6,46 @@ require_relative('../models/deal.rb')
 require_relative('../models/eatery.rb')
 
 
-get '/dealz' do
+get '/seeker' do
   today = Date.today.strftime("%A")
   @days_deals = Deal.find_day_deals(today)
   @title = "Today's Deals"
   erb( :"user/index")
 end
 
-get '/dealz/eateries' do
+get '/seeker/eateries' do
   @eateries = Eatery.find_all
   erb( :"user/eateries/index" )
 end
 
-get '/dealz/eateries/:id' do
+get '/seeker/eateries/:id' do
   @eatery = Eatery.find(params['id'])
   erb( :"user/eateries/show" )
 end
 
-get '/dealz/deals' do
+get '/seeker/deals' do
   @deals = Deal.find_all
   erb( :"user/deals/index" )
 end
 
-get '/dealz/deals/:id' do
+get '/seeker/deals/:id' do
   @deal = Deal.find(params['id'])
   erb( :"user/deals/show" )
 end
 
-get '/dealz/:day' do
+get '/seeker/:day' do
   day = params['day'].capitalize!
   @days_deals = Deal.find_day_deals(day.to_sym)
   @title = "#{day}'s Deals"
   erb( :"user/index" )
 end
 
-get '/dealz/burgers/eatery/:id' do
+get '/seeker/burgers/eatery/:id' do
   @burgers = Burger.find_burgers(params['id'])
   erb( :"user/burgers/index" )
 end
 
-get '/dealz/burgers/:id' do
+get '/seeker/burgers/:id' do
   @burger = Burger.find(params['id'])
   erb( :"user/burgers/show" )
 end

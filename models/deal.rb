@@ -26,7 +26,7 @@ class Deal
 
   def update
     sql = "UPDATE deals
-    SET (name, discount, day, image) = ($1, $2, $3, $4, $5)
+    SET (name, discount, day, eatery_id, burger_id) = ($1, $2, $3, $4, $5)
     WHERE id = $6"
     values = [@name, @discount, @day, @eatery_id, @burger_id, @id]
     SqlRunner.run(sql, values)

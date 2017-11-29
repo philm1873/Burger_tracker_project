@@ -1,32 +1,33 @@
 <nav class="nav_bar">
   <ul>
-    <li><a href="/dealz/eateries">Eateries</a></li>
-    <li><a href="/dealz/deals">Deals</a></li>
+    <li><a href="/">Landing Page</a></li>
+    <li><a href="/seeker/eateries">Eateries</a></li>
+    <li><a href="/seeker/deals">Deals</a></li>
   </ul>
 </nav>
 
 <nav>
   <ul>
     <li>
-      <a href="/dealz/monday">Monday</a>
+      <a href="/seeker/monday">Monday</a>
     </li>
     <li>
-      <a href="/dealz/tuesday">Tuesday</a>
+      <a href="/seeker/tuesday">Tuesday</a>
     </li>
     <li>
-      <a href="/dealz/wednesday">Wednesday</a>
+      <a href="/seeker/wednesday">Wednesday</a>
     </li>
     <li>
-      <a href="/dealz/thursday">Thursday</a>
+      <a href="/seeker/thursday">Thursday</a>
     </li>
     <li>
-      <a href="/dealz/friday">Friday</a>
+      <a href="/seeker/friday">Friday</a>
     </li>
     <li>
-      <a href="/dealz/saturday">Saturday</a>
+      <a href="/seeker/saturday">Saturday</a>
     </li>
     <li>
-      <a href="/dealz/sunday">Sunday</a>
+      <a href="/seeker/sunday">Sunday</a>
     </li>
   </ul>
 </nav>
@@ -37,13 +38,13 @@
   <% @days_deals.each do |deal| %>
 
   <div>
-    <a href="/dealz/eateries/<%= deal.eatery.id %>">
+    <a href="/seeker/eateries/<%= deal.eatery.id %>">
       <img src="./images/<%= deal.eatery.logo %>">
       <p><%= "#{deal.eatery.name}" %></p>
     </a>
   </div>
   <div>
-    <a href="/dealz/deals/<%= deal.id %>">
+    <a href="/seeker/deals/<%= deal.id %>">
       <p><%= "#{deal.name}" %></p>
       <p><%= "Saving: #{deal.money_saved}" %></p>
     </a>

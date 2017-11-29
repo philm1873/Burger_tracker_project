@@ -1,12 +1,12 @@
 <nav class="nav_bar">
   <ul>
-    <li><a href="/dealz">Home</a></li>
-    <li><a href="/dealz/deals">Deals</a></li>
+    <li><a href="/seeker">Home</a></li>
+    <li><a href="/seeker/deals">Deals</a></li>
   </ul>
 </nav>
 
 <% @eateries.each do |eatery| %>
-<a href="/dealz/eateries/<%= eatery.id %>">
+<a href="/seeker/eateries/<%= eatery.id %>">
   <img src="./images/<%= eatery.logo %>">
   <h2><%= "#{eatery.name}" %></h2>
 </a>
