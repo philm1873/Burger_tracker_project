@@ -25,8 +25,8 @@ class Eatery
 
   def update
     sql = "UPDATE eateries
-    SET (name, address, tel_no, motto, logo) = ($1, $2, $3, $4)
-    WHERE id = $6"
+    SET (name, address, tel_no, logo) = ($1, $2, $3, $4)
+    WHERE id = $5"
     values = [@name, @address, @tel_no, @logo, @id]
     SqlRunner.run(sql, values)
   end

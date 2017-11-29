@@ -5,9 +5,11 @@
   </ul>
 </nav>
 
-<% @eateries.each do |eatery| %>
-<a href="/seeker/eateries/<%= eatery.id %>">
-  <img src="./images/<%= eatery.logo %>">
-  <h2><%= "#{eatery.name}" %></h2>
-</a>
-<% end %>
+<div class="seeker_index">
+  <% @eateries.each do |eatery| %>
+    <a href="/seeker/eateries/<%= eatery.id %>">
+      <img src="./images/<%= eatery.logo %>">
+      <h2><%= "#{eatery.name}" %></h2>
+    </a>
+  <% end %>
+</div>

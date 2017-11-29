@@ -6,8 +6,12 @@
   </ul>
 </nav>
 
-<img src="../../public/images/<%= @eatery.logo %>">
-<h2><%= @eatery.name %></h2>
-<p><%= @eatery.address %></p>
-<p><%= @eatery.tel_no %></p>
-<a href="/seeker/burgers/eatery/<%= @eatery.id %>">Burgers</a>
+<div class="seeker_show">
+  <div class="seeker_style">
+    <img src="../../public/images/<%= @eatery.logo %>">
+    <h2><%= @eatery.name %></h2>
+    <p><%= @eatery.address %></p>
+    <p><%= @eatery.tel_no %></p>
+    <a href="/seeker/burgers/eatery/<%= @eatery.id %>">Burgers</a>
+  </div>
+</div>

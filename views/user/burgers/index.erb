@@ -6,9 +6,13 @@
   </ul>
 </nav>
 
-<% @burgers.each do |burger| %>
-  <img src="/images/<%= burger.image %>">
-  <h2><%= "#{burger.name}" %></h2>
-  <p><%= "#{burger.type.to_s}" %></p>
-  <p><%= "#{burger.display_price}" %></p>
-<% end %>
+<div class="seeker_index">
+  <% @burgers.each do |burger| %>
+    <div class="seeker_style">
+      <img src="/images/<%= burger.image %>">
+      <h2><%= "#{burger.name}" %></h2>
+      <p><%= "#{burger.type.to_s}" %></p>
+      <p><%= "#{burger.display_price}" %></p>
+    </div>
+  <% end %>
+</div>

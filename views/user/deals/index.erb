@@ -5,10 +5,12 @@
   </ul>
 </nav>
 
-<% @deals.each do |deal| %>
-<a href="/seeker/deals/<%= deal.id %>">
-  <h2><%= "#{deal.name}" %></h2>
-  <p><%= "#{deal.discount}" %></p>
-  <p><%= "#{deal.day.to_s}" %></p>
-</a>
-<% end %>
+<div class="seeker_index">
+  <% @deals.each do |deal| %>
+    <a href="/seeker/deals/<%= deal.id %>">
+    <h2><%= "#{deal.name}" %></h2>
+    <p><%= "#{deal.discount}" %></p>
+    <p><%= "#{deal.day.to_s}" %></p>
+    </a>
+  <% end %>
+</div>
