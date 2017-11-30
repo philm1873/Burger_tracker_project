@@ -8,11 +8,11 @@
 <div class="seeker_show">
   <div class="seeker_style">
     <h2><%= @deal.name %></h2>
-    <p><%= @deal.money_saved %></p>
-    <p><%= @deal.day.to_s %></p>
-    <p><%= @deal.eatery.name %></p>
-    <p><%= @deal.burger.name %></p>
-    <p><%= @deal.burger.display_price %></p>
+    <p>Applies to: <%= @deal.burger.name %></p>
+    <p>Normally costs: £<%= @deal.burger.display_price %></p>
+    <p>You'll save: £<%= @deal.money_saved %></p>
+    <p>It's on: <%= @deal.day.to_s %></p>
+    <p>It's at: <%= @deal.eatery.name %></p>
     <a href="/seeker/burgers/<%= @deal.burger_id %>">Burger</a>
   </div>
 </div>

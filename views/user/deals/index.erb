@@ -9,7 +9,7 @@
   <% @deals.each do |deal| %>
     <a href="/seeker/deals/<%= deal.id %>">
     <h2><%= "#{deal.name}" %></h2>
-    <p><%= "#{deal.discount_display}" %></p>
+    <p>£<%= "#{deal.discount_display}" %></p>
     <p><%= "#{deal.day.to_s}" %></p>
     </a>
   <% end %>
