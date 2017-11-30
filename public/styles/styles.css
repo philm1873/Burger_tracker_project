@@ -114,7 +114,15 @@ a {
 
 
 table {
-  margin: 0 auto;
+  margin: 20px auto;
+}
+
+table, th {
+  border: 1px solid #f9f9f4;
+}
+
+table, td {
+  border: 1px solid #f9f9f4;
 }
 
 .admin_button {

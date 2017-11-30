@@ -73,6 +73,12 @@ class Deal
     return sprintf('%.2f', saving/100)
   end
 
+  def discount_display
+    percentage_discount = (1-@discount)*100
+    return "#{percentage_discount.round}%" if @discount < 1
+    return "#{@discount.to_i} free burger(s)" if @discount >= 1
+  end
+
 
   def self.delete_all
     sql = "DELETE FROM deals"

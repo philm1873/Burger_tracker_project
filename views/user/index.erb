@@ -35,18 +35,27 @@
 
   <div>
     <h2><%= "#{@title}" %></h2>
+    <% if @days_deals == [] %>
 
-    <% @days_deals.each do |deal| %>
-    <div class="deal_list">
-        <a href="/seeker/eateries/<%= deal.eatery.id %>">
-          <img src="./images/<%= deal.eatery.logo %>">
-          <p><%= "#{deal.eatery.name}" %></p>
-        </a>
-        <a href="/seeker/deals/<%= deal.id %>">
-          <p><%= "#{deal.name}" %></p>
-          <p><%= "Saving: #{deal.money_saved}" %></p>
-        </a>
-    </div>
+      <div>
+        <p>No deals today!</p>
+      </div>
+
+      <% else %>
+
+      <% @days_deals.each do |deal| %>
+
+        <div class="deal_list">
+          <a href="/seeker/eateries/<%= deal.eatery.id %>">
+            <img src="./images/<%= deal.eatery.logo %>">
+            <p><%= "#{deal.eatery.name}" %></p>
+          </a>
+          <a href="/seeker/deals/<%= deal.id %>">
+            <p><%= "#{deal.name}" %></p>
+            <p><%= "Saving: #{deal.money_saved}" %></p>
+          </a>
+        </div>
+      <% end %>
 
     <% end %>
   </div>
