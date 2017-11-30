@@ -35,6 +35,7 @@ get '/seeker/deals/:id' do
 end
 
 get '/seeker/:day' do
+  @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
   day = params['day'].capitalize!
   @days_deals = Deal.find_day_deals(day.to_sym)
   @title = "#{day}'s Deals"
