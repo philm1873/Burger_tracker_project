@@ -9,27 +9,13 @@
 <div class="seeker_home">
   <nav>
     <ul>
-      <li>
-        <a href="/seeker/monday">Monday</a>
-      </li>
-      <li>
-        <a href="/seeker/tuesday">Tuesday</a>
-      </li>
-      <li>
-        <a href="/seeker/wednesday">Wednesday</a>
-      </li>
-      <li>
-        <a href="/seeker/thursday">Thursday</a>
-      </li>
-      <li>
-        <a href="/seeker/friday">Friday</a>
-      </li>
-      <li>
-        <a href="/seeker/saturday">Saturday</a>
-      </li>
-      <li>
-        <a href="/seeker/sunday">Sunday</a>
-      </li>
+      <% @days.each do |day| %>
+        <li>
+          <a href="/seeker/<%= day.downcase %>">
+            <%= day %>
+          </a>
+        </li>
+      <% end %>
     </ul>
   </nav>
 

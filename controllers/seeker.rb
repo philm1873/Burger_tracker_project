@@ -7,6 +7,7 @@ require_relative('../models/eatery.rb')
 
 
 get '/seeker' do
+  @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
   today = Date.today.strftime("%A")
   @days_deals = Deal.find_day_deals(today)
   @title = "Today's Deals"
