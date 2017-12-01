@@ -25,7 +25,7 @@ put '/admin/eateries/:id' do
 end
 
 delete '/admin/eateries/:id' do
-  Eatery.new(params).delete
+  Eatery.find(params['id']).delete
   redirect '/admin/eateries'
 end
 

@@ -28,7 +28,7 @@ class Burger
   def update
     sql = "UPDATE burgers
     SET (name, type, price, image) = ($1, $2, $3, $4)
-    WHERE id = $6"
+    WHERE id = $5"
     values = [@name, @type, @price, @image, @id]
     SqlRunner.run(sql, values)
   end

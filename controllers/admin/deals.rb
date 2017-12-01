@@ -31,7 +31,7 @@ put '/admin/deals/:id' do
 end
 
 delete '/admin/deals/:id' do
-  Deal.new(params).delete
+  Deal.find(params['id']).delete
   redirect '/admin/deals'
 end
 
