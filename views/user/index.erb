@@ -27,7 +27,7 @@
         <p>No deals today!</p>
       </div>
 
-      <% else %>
+    <% else %>
 
       <% @days_deals.each do |deal| %>
 
@@ -38,7 +38,7 @@
           </a>
           <a href="/seeker/deals/<%= deal.id %>">
             <p><%= "#{deal.name}" %></p>
-            <p><%= "Saving: #{deal.money_saved}" %></p>
+            <p><%= "Saving: £#{deal.money_saved}" %></p>
           </a>
         </div>
       <% end %>

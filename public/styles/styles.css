@@ -5,10 +5,6 @@ body {
   margin: 0;
 }
 
-a:hover {
-  background-color: #176aef;
-}
-
 a {
   color: inherit;
   display: inline-block;
@@ -16,6 +12,10 @@ a {
   text-decoration: none;
   padding: 5px 8px;
   margin: 2px;
+}
+
+a:hover {
+  background-color: #176aef;
 }
 
 .layout {
