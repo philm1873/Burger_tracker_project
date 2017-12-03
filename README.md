@@ -1,9 +1,9 @@
-Dealz Burger Tracker
+# Dealz Burger Tracker
 
-Prerequisites
+## Prerequisites
 Ruby
 Sinatra
-Postgres SQL 
+Postgres SQL
 
 instructions for running app
 assume no knowledge of sinatra
